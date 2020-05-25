@@ -1,0 +1,30 @@
+/* Navbar */
+.navbar {
+    background-color: rgb(176, 218, 231);
+    color: white
+}
+/* Header */
+.navbar-home {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    
+}
+
+
+/* Buttons */
+.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+/* Jumbotron */
+.body-container {
+    color: white;
+    padding-top: 10px;
+}
+
+.contact-section {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

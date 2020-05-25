@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Linked In Script-->
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+   
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!--Style-->
+    <link rel="stylesheet" href="contact.css">
+    
+    <!--Title-->
+    <title>Contact</title>
+</head>
+
+<body>
+     <!--Nav bar-->
+     <nav class="navbar navbar-light">
+        <div class="container">
+            <!--Header-->
+           <h1 class="navbar navbar-home display-6 bg-secondary text-white mr-">Contact Me</h1>
+           
+            <!--Portfolio Btn-->
+            <section class="navbar-nav ml-auto">
+                 <div class="navbar-item">
+                        <a href="portfolio.html" class="navbar-link">
+                            <button type="button" class="btn btn-info">Portfolio</button>
+                        </a>
+                    </div>
+            </section>
+            
+            <!--About Me Btn-->
+            <section class="navbar-nav" >
+                <div class="navbar-item">
+                    <a href="index.html" class="navbar-link">
+                        <button type="button" class="btn btn-info">About Me</button>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </nav>
+    <!--End Navbar-->
+    
+    <!--Jumbotron-->
+    <div class="jumbotron bg-info mt-3 pb-5">
+        <div class="container body-container">
+<!--Section: Contact-->
+<section class="mb-4 contact-section">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-left my-4">Contact Me</h2>
+   
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Name Column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--End Name column-->
+
+                    <!--Email Column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--End Email Columnn-->
+
+                </div>
+                <!--End Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <!---Subject Column-->
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                    <!--End Subject Column-->
+                </div>
+                <!--End Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Message Column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                    <!--End Message Column-->
+                </div>
+                <!--End Grid Row-->
+
+            </form>
+            <!--Button-->
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--End Grid Column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+             
+             <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Raleigh, NC 27617</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+1-919-123-4567</p>
+                </li>
+            </ul>
+           <!--Badge-->
+           <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="kenfcheng"><a class="LI-simple-link" href='https://www.linkedin.com/in/kenfcheng?trk=profile-badge'>Ken Cheng</a>
+           </div>
+           <!--End Badge-->
+          
+
+        </div>
+       
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--End Section: Contact-->
+        </div>
+            
+    </div>
+    <!--End Jumbotron-->            
+</body>
