@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--Linked In Script-->
+    <!--LinkedIn Badge Script-->
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
    
     <!--Bootstrap-->
@@ -52,13 +52,14 @@
 <section class="mb-4 contact-section">
 
     <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-left my-4">Contact Me</h2>
+    <h2 class="h1-responsive font-weight-bold text-left my-4">Reach Out!</h2>
    
 
     <div class="row">
 
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
+            <!--Mail.php page created for connection-->
             <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                 <!--Grid row-->
@@ -117,33 +118,85 @@
             </form>
             <!--Button-->
             <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                <a class="btn btn-primary" onclick="validateForm();">Send</a>
+                
+                <!--Javascript Email Validation-->
+                <script>
+                    function validateForm() {
+                    var name =  document.getElementById('name').value;
+                    if (name == "") {
+                        document.querySelector('.status').innerHTML = "Name cannot be empty";
+                        return false;
+                    }
+                    var email =  document.getElementById('email').value;
+                    if (email == "") {
+                        document.querySelector('.status').innerHTML = "Email cannot be empty";
+                        return false;
+                    } else {
+                        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        if(!re.test(email)){
+                            document.querySelector('.status').innerHTML = "Email format invalid";
+                            return false;
+                        }
+                    }
+                    var subject =  document.getElementById('subject').value;
+                    if (subject == "") {
+                        document.querySelector('.status').innerHTML = "Subject cannot be empty";
+                        return false;
+                    }
+                    var message =  document.getElementById('message').value;
+                    if (message == "") {
+                        document.querySelector('.status').innerHTML = "Message cannot be empty";
+                        return false;
+                    }
+                    document.querySelector('.status').innerHTML = "Sending...";
+                  }</script>
+                    <!--End Javascript Email Validation-->
+                    
+                    <!--AJAX No Reloading Script-->
+                    <script>
+                        document.getElementById('status').innerHTML = "Sending...";
+                        formData = {
+                        'name'     : $('input[name=name]').val(),
+                        'email'    : $('input[name=email]').val(),
+                        'subject'  : $('input[name=subject]').val(),
+                        'message'  : $('textarea[name=message]').val()
+                        };
+                        
+                        
+                        $.ajax({
+                        url : "mail.php",
+                        type: "POST",
+                        data : formData,
+                        success: function(data, textStatus, jqXHR)
+                        {
+                        
+                        $('#status').text(data.message);
+                        if (data.code) //If mail was sent successfully, reset the form.
+                        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+                        },
+                        error: function (jqXHR, textStatus, errorThrown)
+                        {
+                        $('#status').text(jqXHR);
+                        }
+                        });
+                    </script>
+                    <!--End AJAX No Reloading Script-->
             </div>
             <div class="status"></div>
+
         </div>
         <!--End Grid Column-->
 
         <!--Grid column-->
         <div class="col-md-3 text-center">
-             
-             <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Raleigh, NC 27617</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+1-919-123-4567</p>
-                </li>
-            </ul>
-           <!--Badge-->
+            <!--Badge-->
            <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="kenfcheng"><a class="LI-simple-link" href='https://www.linkedin.com/in/kenfcheng?trk=profile-badge'>Ken Cheng</a>
            </div>
            <!--End Badge-->
-          
-
-        </div>
+          </div>
        
-        <!--Grid column-->
+        <!--End Grid column-->
 
     </div>
 
