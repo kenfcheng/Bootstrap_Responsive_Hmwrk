@@ -18,5 +18,9 @@
 
 .page-footer {
     background-color: rgb(176, 218, 231);
-    color: rgb(149, 161, 184)
+    color: rgb(149, 161, 184);
+    margin-bottom: 0px;
+    margin-top: 80px;
+    padding-top: 50px;
+    
 }
